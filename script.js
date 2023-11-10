@@ -8,31 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
 
-    // Add an event listener to the search button
-    searchBtn.addEventListener('click', () => {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        if (searchTerm !== '') {
-            searchPokemon(searchTerm);
-        } else {
-            // If the search term is empty, display all Pokemon
-            fetchPokemon();
-        }
+    // Function to filter Pokemon based on the search query
+    function filterPokemon(query) {
+        const allPokemonCards = document.querySelectorAll('.pokemon-card');
+
+        allPokemonCards.forEach(pokemonCard => {
+            const pokemonName = pokemonCard.querySelector('p').textContent.toLowerCase();
+            if (pokemonName.includes(query.toLowerCase())) {
+                pokemonCard.style.display = 'block'; // Show the matching Pokemon
+            } else {
+                pokemonCard.style.display = 'none'; // Hide the non-matching Pokemon
+            }
+        });
+    }
+
+    // Event listener for the search button
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', () => {
+        const searchInput = document.getElementById('searchInput');
+        const searchTerm = searchInput.value;
+        filterPokemon(searchTerm);
     });
 
-    // Function to search for Pokemon
-    async function searchPokemon(searchTerm) {
-        try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}`);
-            const data = await response.json();
-
-            // Display the found Pokemon
-            displayPokemon([{ name: data.name, url: data.species.url }]);
-        } catch (error) {
-            // If the Pokemon is not found, display an error message
-            console.error('Pokemon not found');
-            pokemonList.innerHTML = '<p>Pokemon not found.</p>';
-        }
-    }
     
     
     // Fetch initial Pokemon data
