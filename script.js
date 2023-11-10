@@ -136,11 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function getTypeColor(type) {
         switch (type) {
             case 'grass':
-                return '#78C850'; // Green
+                return '#D5EFC8'; // Green
             case 'fire':
-                return '#F08030'; // Orange
+                return '#F8B284'; // Orange
             case 'water':
-                return '#6890F0'; // Blue
+                return '#D0DEF9'; // Blue
+            case 'normal':
+                return '#ABABAB'; // Grey
             // Add more cases for other types as needed
             default:
                 return '#A8A878'; // Default color
