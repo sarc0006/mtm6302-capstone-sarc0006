@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    padding: 20px;
+}
+
+.header-image {
+    width: 100px; /* Adjust the width according to your design */
+}
+
+.logo {
+    width: 50px; /* Adjust the width according to your logo size */
+    margin-left: 10px;
+}
+
+.search-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#search-input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pokedex-container {
+    max-width: 1000px; /* Adjust the max-width to make the grid wider */
+    margin: 20px auto;
+}
+
+.pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusted width to 180px */
+    gap: 10px;
+}
+
+.pokemon-card {
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.pokemon-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 0 0 0 8px;
+}
+
+
+.pokemon-types {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.pokemon-type {
+    background-color: #ffcc00; /* Adjust the color to your preference */
+    color: #333;
+    padding: 4px 8px;
+    margin: 0 3px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.pokemon-card img {
+    width: 80px;
+    height: 80px;
+}
+
+#more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pokemon-details {
+    display: none;
+}
+
+.pokemon-details-info {
+    margin-top: 10px;
+}
+
+.caught {
+    background-color: #aaffaa;
+}
+
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+/* ... (rest of the CSS remains the same) */

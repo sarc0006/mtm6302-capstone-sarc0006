@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pokedex</title>
 </head>
 <body>
-    
+    <div class="red-header">
+        <div class="header-container">
+            <img src="path/to/header-image.png" alt="Pokedex Header Image" class="header-image">
+            <img src="path/to/logo.png" alt="Pokedex Logo" class="logo">
+        </div>
+    </div>
+    <div class="white-background">
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button id="search-btn">Search</button>
+    </div>
+    <div class="pokedex-container">
+        <div id="pokemon-list" class="pokemon-list"></div>
+        <button id="more-btn">More</button>
+    </div>
+    <div id="pokemon-details" class="pokemon-details"></div>
 
-    
-    <script src="main.js"></script>
-    <script>
-        console.log("Hello from html")
-    </script>
+    <div id="modal-container">
+        <div id="modal-content"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
