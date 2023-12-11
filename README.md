@@ -26,6 +26,7 @@
 ##### (2) HTML, CSS, and Javascript
 ##### (3) Visual Studio Code for editing
 ##### (4) Git and Github for version control
+##### (5) Pokedex logo created by me. Pokeball and Background by Zorasgar on Imgur.
 #### Throughout the development process, there were several difficulties encountered when creating the Pokedex online application. One major challenge was figuring out complex code problems in order to implement particular functions in an efficient manner. Thorough problem-solving and code optimization were necessary to provide a seamless user experience. It was difficult to replicate the original mock-up because some design features did not transfer well into the working application. As a result, several design modifications were required to achieve a balance between usefulness and aesthetics. A few changes were made to the design in order to improve efficiency and simplicity, bringing the user interface closer to the useful features of the Pokedex. These difficulties highlighted how design goals and the technological complexities of creating an efficient and user-friendly online application interact dynamically.
 
 
