@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pokemon Inventory</title>
+</head>
+<body>
+    <div class="red-header">
+        <div class="header-container">
+            <img src="img/pokeball.png" alt="Pokedex Logo" class="logo" id="logo">
+            <img src="img/pokedex.png" alt="Pokedex Header Image" class="header-image" id="headerImage">
+        </div>
+        <div class="search-container inventory-search-container">
+            <input type="text" id="inventorySearchInput" placeholder="Search Pokémon in Inventory...">
+            <button id="inventorySearchButton">Search</button>
+        </div>        
+        <button id="backToMain">Back to Main Page</button>
+    </div>
+    <div class="white-background">
+    </div>
+    <div id="inventory-list" class="pokemon-list"></div>
+
+    <script src="inventory.js"></script>
+</body>
+</html>

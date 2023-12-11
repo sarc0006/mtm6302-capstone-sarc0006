@@ -17,6 +17,17 @@
 ##### (3) Visual Studio Code for editing
 ##### (4) Git and Github for version control
 #### In conclusion, The development of the Pokedex prototype was a comprehensive process that involved planning, research, development, and testing. By utilizing the PokeAPI and various web development technologies, I've successfully created a semi-functional Pokedex. The challenges faced during the project were overcome with careful problem-solving and continuous improvement. This report serves as a summary of the steps taken and the resources used to create the Pokedex prototype.
+#### The Steps taken in creation of the web application: 
+##### (1) Project Planning - using the mockup from last assignment, I attempted to replicate the look and functionality. I outlined the key features, such as search functionality, detailed Pokemon information display, and a responsive design.
+##### (2) Front-end Development - with that said, I then developed the front-end of the web app using the chosen technology stack. I integrated the PokeAPI to fetch and display Pokemon data dynamically, and Implemented search and filtering functionality for easy navigation.
+##### (3) Trial and Error (Testing) - Finally, with the HTML, CSS and Javascript files created, I proceeded to add more code, edit, and delete accordingly. I ensured cross-browser compatibility and responsiveness.
+#### Resources used: 
+##### (1) PokeAPI
+##### (2) HTML, CSS, and Javascript
+##### (3) Visual Studio Code for editing
+##### (4) Git and Github for version control
+#### Throughout the development process, there were several difficulties encountered when creating the Pokedex online application. One major challenge was figuring out complex code problems in order to implement particular functions in an efficient manner. Thorough problem-solving and code optimization were necessary to provide a seamless user experience. It was difficult to replicate the original mock-up because some design features did not transfer well into the working application. As a result, several design modifications were required to achieve a balance between usefulness and aesthetics. A few changes were made to the design in order to improve efficiency and simplicity, bringing the user interface closer to the useful features of the Pokedex. These difficulties highlighted how design goals and the technological complexities of creating an efficient and user-friendly online application interact dynamically.
+
 
 
 

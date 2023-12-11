@@ -2,7 +2,20 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    background: url('img/pokemon-background.jpeg'); 
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4; /* Set the opacity to 50% */
 }
 
 .header-container {
@@ -10,16 +23,22 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #EE6565;
-    padding: 20px;
+    padding: 5px;
 }
 
 .header-image {
-    width: 100px; /* Adjust the width according to your design */
+    width: 300px; 
+    height: auto; 
 }
 
 .logo {
-    width: 50px; /* Adjust the width according to your logo size */
-    margin-left: 10px;
+    width: 80px; 
+    height: auto; 
+}
+
+.logo,
+.header-image {
+    cursor: pointer; /* Change cursor to a pointer */
 }
 
 .search-container {
@@ -27,35 +46,64 @@ body {
     margin: 10px 0;
 }
 
-#search-input {
+#searchInput {
+    width: 500px; 
     padding: 8px;
     font-size: 16px;
+    border-radius: 8px;
+    border-width: 2px;
 }
 
-#search-btn {
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
+#searchButton {
+    background-color: #EE6565; 
+    color: white; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border: 0;
 }
 
 .pokedex-container {
-    max-width: 1000px; /* Adjust the max-width to make the grid wider */
+    max-width: 1500px;
     margin: 20px auto;
 }
 
 .pokemon-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjusted width to 180px */
-    gap: 10px;
+    grid-template-columns: repeat(7, minmax(120px, 1fr)); /* Initial 7 columns */
+    gap: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .pokemon-card {
     position: relative;
     background-color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     cursor: pointer;
     position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+    .pokemon-list {
+        grid-template-columns: repeat(5, minmax(120px, 1fr)); /* 5 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .pokemon-list {
+        grid-template-columns: repeat(3, minmax(120px, 1fr)); /* 3 columns for small screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pokemon-list {
+        grid-template-columns: repeat(2, minmax(120px, 1fr)); /* 2 columns for extra small screens */
+    }
 }
 
 .pokemon-number {
@@ -69,15 +117,8 @@ body {
     border-radius: 0 0 0 8px;
 }
 
-
-.pokemon-types {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-}
-
 .pokemon-type {
-    background-color: #ffcc00; /* Adjust the color to your preference */
+    background-color: #ffcc00; /* Default background color */
     color: #333;
     padding: 4px 8px;
     margin: 0 3px;
@@ -85,17 +126,20 @@ body {
     font-size: 12px;
 }
 
-.pokemon-card img {
-    width: 80px;
-    height: 80px;
-}
-
 #more-btn {
     display: block;
     margin: 20px auto;
-    padding: 10px;
+    padding: 50px; /* Change the padding to 60px */
     font-size: 16px;
     cursor: pointer;
+    background-color: #EE6565;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+#more-btn:hover {
+    opacity: 0.8;
 }
 
 .pokemon-details {
@@ -107,19 +151,20 @@ body {
 }
 
 .caught {
-    background-color: #aaffaa;
+    background-color: #D5EFC8;
 }
 
 #modal-container {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 }
 
 #modal-content {
@@ -128,6 +173,8 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
+    max-width: 600px;
+    width: 100%;
 }
 
 .close {
@@ -139,4 +186,165 @@ body {
     color: #333;
     cursor: pointer;
 }
-/* ... (rest of the CSS remains the same) */
+
+.caught {
+    background-color: #D5EFC8; /* Example background color for caught Pokemon */
+}
+
+.modal-button {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+/* Inside styles.css */
+#inventoryButton {
+    display: block;
+    margin: 20px auto;
+    padding: 16px; /* Adjust padding as needed */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #EE6565;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#inventoryButton:hover {
+    opacity: 0.8;
+}
+
+#backToMain {
+    margin: 10px auto; /* Set margin to auto for horizontal centering */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #EE6565;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: block; 
+}
+
+#backToMain:hover {
+    opacity: 0.8;
+}
+
+.inventory-search-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#inventorySearchInput {
+    width: 500px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    border-width: 2px;
+}
+
+#inventorySearchButton {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.error-message-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: #ff9999;
+    color: #990000;
+    border: 2px solid #990000;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 300px;
+    z-index: 9999;
+}
+
+#error-close-btn {
+    background-color: transparent; /* Transparent background */
+    color: #990000; /* Dark text color */
+    border: 10px;
+    padding: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 0; 
+    right: 0; 
+}
+
+#error-close-btn:hover {
+    color: #000; /* Darker text on hover */
+}
+
+#inventorySearchButton {
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #EE6565;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#inventorySearchButton:hover {
+    opacity: 0.8;
+}
+
+.release-button {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+.release-button:hover {
+    background-color: #ffaa00; /* Change the background color on hover */
+}
+
+
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 600px) {
+    .pokemon-card {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #searchInput {
+        width: 100%;
+        max-width: none;
+    }
+
+    #searchButton {
+        margin-top: 10px;
+    }
+
+    .pokemon-list {
+        gap: 10px;
+    }
+
+    .pokemon-card {
+        padding: 15px;
+    }
+}

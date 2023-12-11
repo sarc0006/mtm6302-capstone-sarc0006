@@ -9,13 +9,17 @@
 <body>
     <div class="red-header">
         <div class="header-container">
-            <img src="path/to/header-image.png" alt="Pokedex Header Image" class="header-image">
-            <img src="path/to/logo.png" alt="Pokedex Logo" class="logo">
+            <img src="img/pokeball.png" alt="Pokedex Logo" class="logo" id="logo">
+            <img src="img/pokedex.png" alt="Pokedex Header Image" class="header-image" id="headerImage">
         </div>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search Pokemon...">
+            <!-- ... (existing search bar code) ... -->
+            <input type="text" id="searchInput" placeholder="Search...">
             <button id="searchButton">Search</button>
         </div>
+        
+        <!-- Add Pokemon Inventory button -->
+        <button id="inventoryButton" class="inventoryButton">Pokemon Inventory</button>
     </div>
     <div class="white-background">
     </div>
@@ -26,9 +30,14 @@
     <div id="pokemon-details" class="pokemon-details"></div>
 
     <div id="modal-container">
-        <div id="modal-content"></div>
+        <div id="modal-content">
+        </div>
     </div>
 
+    <div id="error-message" class="error-message-container">
+        <p id="error-text" class="error-text">No Pokemon found with that name or ID</p>
+        <button id="error-close-btn" class="close-button">Close</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
